@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <audio controls autoplay loop>
+      <source src="𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 80's Tokyo Vibes    Lofi hiphop mix ( Chill & Study ).mp3">
+    </audio>
+    <title>Fighting-Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    
+    <style>
+
+      * {
+        box-sizing: border-box;
+        font-family: 'Press Start 2P', cursive;
+      }
+
+      body{
+        margin: 0;
+        
+        background-repeat: repeat;
+        background-attachment: fixed; 
+        background-size: 100% 100%;
+        background-image: url('https://e0.pxfuel.com/wallpapers/439/665/desktop-wallpaper-pink-pixel-kawaii-pixel-art-thumbnail.jpg');
+        
+    }
+    main{
+        padding-left: 10%;
+    }
+
+      canvas{
+        width: 120%;
+       /* Css for P1 P2 instructions */
+      }
+      div#List-Container1{
+        background-color: rgb(134, 34, 34);
+        margin: 0;
+        padding: 0;
+        color: white;  
+        width: 42%;
+        float: left;
+
+      }
+      div#List-Container2{
+        background-color: rgb(110, 87, 214);
+        margin: 0;
+        padding: 0;
+        color: white;  
+        width: 42%;
+        float: left;
+      }
+    </style>
+     
+</head>
+<body>
+    <main>
+    <!-- red container div -->
+    <div style="position: relative; display: inline-block; width: 70%;">
+      <!-- smaller red container div -->
+      <div
+        style="
+          position: absolute;
+          display: flex;
+          width: 120%;
+          align-items: center;
+          padding: 20px;
+        "
+      >
+        <!-- player health -->
+        <div
+          style="
+            position: relative;
+            width: 140%;
+            display: flex;
+            justify-content: flex-end;
+            border-top: 4px solid white;
+            border-left: 4px solid white;
+            border-bottom: 4px solid white;
+          "
+        >
+          <div style="background-color: red; height: 30px; width: 100%"></div>
+          <div
+            id="playerHealth"
+            style="
+              position: absolute;
+              background: #818cf8;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+            "
+          ></div>
+        </div>
+  
+        <!-- timer -->
+        <div
+          id="timer"
+          style="
+            background-color: black;
+            width: 100px;
+            height: 50px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border: 4px solid white;
+          "
+        >
+          10
+        </div>
+        <!-- enemy health -->
+        <div
+          style="
+            position: relative;
+            width: 180%;
+            border-top: 4px solid white;
+            border-bottom: 4px solid white;
+            border-right: 4px solid white;
+          "
+        >
+          <div style="background-color: red; height: 30px; width: 100%; "></div>
+          <div
+            id="enemyHealth"
+            style="
+              position: absolute;
+              background: #818cf8;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+            "
+          ></div>
+        </div>
+      </div>
+      <!-- Tie text -->
+      <div
+        id="displayText"
+        style="
+          position: absolute;
+          color: white;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          width: 120%;
+          align-items: center;
+          padding: 20px;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: none;
+        "
+      >
+        Tie
+      </div>
+      <canvas></canvas>
+    </div>
+  
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="index.js"></script>
+
+    
+    <div id="List-Container1">
+        <p>. Player 1</p>
+        <p>🔘W - Jump</p>
+        <p>🔘D - Forwards</p>
+        <p>🔘A - Backwards</p>
+        <p>🔘Space Bar - Attack</p>
+    </div>
+    <div id="List-Container2">
+        <p>. Player 2</p>
+        <p>🔘Arrow Up - Jump</p>
+        <p>🔘Arrow Left - Forward</p>
+        <p>🔘Arrow Right - Backwards</p>
+        <p>🔘Arrow Down - Attack</p>
+    </div>
+    <script>
+        document.getElementById("List-Container1").style.border = "thick solid #FFFFFF";
+        document.getElementById("List-Container2").style.border = "thick solid #FFFFFF";
+    </script>
+    </main>
+  </body>
